@@ -87,14 +87,26 @@
                <h3>Can you find how you call your dad in the chart below? </h3>
              
             </div> <img src="images/clustered-words.jpg" />
+             <div class="scroll-text">
+              <form  class="wordselect"  onsubmit="return false">
+         <label>Enter the word you call your dad to find similar words or if your language is unique **<br /></label>
+         <input type="text" id="wordbox" name="worddad" placeholder="Dad word">
+                <input type="submit" id="submitname"  onclick="getWord()" />
+              </form>
+              <div id="languages">
+                
+              </div>
+             </div>
+                  
             
               <div class="little-words">
       <h3>Notes</h3>
       <p>* Passmore S, Barth W, Greenhill SJ, Quinn K, Sheard C, Argyriou P, et al. (2023) Kinbank: A global database of kinship terminology.
       PLoS ONE 18(5): e0283218. <a href="https://doi.org/10.1371/journal.pone.0283218">https://doi.org/10.1371/journal.pone.0283218</a>
       </p>
-      <p>The data set for this project was based on <a href="http://www.kinbank.net/">Kinbank</a>. The data that was used can be <a href="https://github.com/dad-words/dad-words/raw/d27e6fa66024d863c99bd1b693ff66489b523f60/dad_lang.xlsx">found here.</a></.a><br />
-      The R codes to generate the dendrogram can be <a href="https://github.com/dad-words/dad-words/blob/395b3e801f447ddb95b28a29179f783a7fec17f5/dad_lang.r">found here.</a></p>
+      <p>** The calculation for similarity much less accurate than dendrogram. Here only first letters considered ignoring individual letters and word length</p>
+      <p>The data set for this project was based on <a href="http://www.kinbank.net/">Kinbank</a>. More information including r codes and data can be
+      <a href="https://github.com/dad-words/dad-words/blob/c4c03427062da0312fdc2e81de126c71087643dc/README.md">found here</a></p>
       <p>By Nina Errey. This is for my dad. RIP</p>
      </div>
           </div>
@@ -109,7 +121,117 @@
     <script src="js/intersection-observer.js"></script>
     <script src="js/scrollama.min.js"></script>
     <script src="js/script.js"></script>
- 
+   
+  <script>
+    
+    let words = [
+      {word: "apa", language: "Cha palaa"} ,  
+       {word:"apu", language: "Hungarian"} ,         
+    {word: "apa-g", language: "Aguaruna"},   
+     {word:"appa", language: "Korean"}  ,    
+     {word:     "appa", language: "Tamil" }   ,
+    {word:       "athair", language: "Irish"            }   ,   
+{word:   "ayah", language: "Indonesian"          } ,  
+  {word:    "ai", language: "Hoti"              } ,  
+   {word:      "ait", language: "Basque"           } ,    
+   {word:    "abá", language: "North Slavey"     } ,  
+    {word:     "ab", language: "Arabic"           } ,  
+     {word:      "aabe", language: "Somali"            }   , 
+     {word: "abbat", language: "Amharic"          } ,  
+    {word:    "uba", language: "Tupinambá"       } ,  
+    {word:      "uba", language: "Hausa"  }  ,               
+    {word:  "u-bä'-bä", language: "Zulu"       } ,      
+    {word:  "paba", language: "Sirionó"             }   ,
+   {word:   "pa'a", language: "Movima"            } ,  
+   {word:     "paapa", language: "Maasai"         } ,  
+   {word:       "père", language: "French"          } ,  
+   {word:      "phaw", language: "Thai"                } ,  
+   {word:   "pa'-bä", language: "Chibcha"        } ,  
+   {word:      "pai", language: "Portuguese"    },       
+   {word:     "pare", language: "Catalan"     } ,   
+   {word:         "papara", language: "Maori"   } ,           
+   {word:   "padre", language: "Spanish"       } ,  
+   {word:        "padre", language: "Italian"   } ,            
+   {word:  "padar", language: "Tajik"         } ,       
+   {word:   "pita", language: "Hindi"         } ,      
+   {word:     "pita", language: "Gujarati"    }  ,          
+   {word:  "fada", language: "Jamaican Creole English"  }   ,
+{word: "fadir", language: "Icelandic"    }  ,     
+ {word:      "fa", language: "Swedish"    } ,           
+ {word:       "far", language: "Norwegian Bokmål"  } ,          
+{word:"vader", language: "Dutch "        }   , 
+  {word:        "vader", language: "Afrikaans"    }  ,    
+  {word:      "dad", language: "English"      }  ,     
+  {word:        "dada", language: "Malagasy"  }  ,         
+  {word:  "bàba", language: "Mungaka"      }  ,  
+  {word:          "na", language: "Cupeño"   }  ,         
+  {word:   "noh-tä'-we", language: "Plains Cree"    }  ,   
+  {word:"nna", language: "Igbo"       }      ,
+  {word:        "nidada", language: "Northern Ojibwa"   }  ,   
+  {word:  "ah-da'", language: "Assiniboine"   }   ,  
+  {word:   "pedær", language: "Farsi"       }  ,     
+  {word:       "pedar", language: "Dari"     } ,      
+  {word:      "bapa", language: "Marathi"     } ,     
+  {word:         "bapak", language: "Malay"    }  ,  
+  {word:         "bap", language: "Urdu"     } ,             
+  {word:     "bo", language: "Vietnamese"     } ,    
+   {word:    "baba", language: "Lebanese"     }  ,     
+ {word:        "baba", language: "Turkish"    } ,   
+ {word:          "baba", language: "Mandarin"   }   ,         
+   {word:   "baba", language: "Bengali"    }  ,      
+ {word:      "baba", language: "Moroccan"   } ,          
+ {word:      "baba", language: "Swahili"    } ,       
+ {word:    "bapa", language: "Panjabi"     }  ,         
+ {word:     "bàh", language: "Cantonese"    }  ,    
+ {word:    "baa", language: "Polci"         } ,       
+ {word:       "baaba", language: "Fula"      } ,      
+ {word:      "taita", language: "Siona-Tetete"   } ,      
+ {word:     "taat", language: "Southeastern Tepehuan"   } ,   
+{word:"ta-ši", language: "Wayuu"     }   ,   
+ {word:      "taata", language: "Ding"   }  ,      
+ {word:       "tad", language: "Welsh"        }  , 
+ {word:             "táé", language: "Yaka"  }  ,       
+ {word:       "tuba", language: "Lingua Geral Paulista"   } ,  
+ {word: "tatko", language: "Macedonian"    }   ,
+ {word:        "tä-ta'", language: "Hidatsa"    } ,       
+ {word:       "tata", language: "Páez"    } ,  
+ {word:    "tata", language: "Mosetén-Chimané"   } ,    
+ {word:     "tata", language: "Romanian"  } ,          
+  {word:      "tata", language: "Serbian-Croatian-Bosnian" }  , 
+ {word:"tato", language: "Ukrainian"    }   ,
+ {word:           "tatta", language: "Sinhala"      }   ,    
+ {word:       "tatana", language: "Tsonga"   }   ,    
+ {word:         "tata", language: "Lunda"   } ,             
+ {word:      "tata", language: "Seki"       }  , 
+ {word:             "tate", language: "Ngulu"    }  ,           
+ {word:      "vati", language: "German"   }  ,     
+ {word:            "pateras", language: "Greek"  }   ,
+ {word:       "tatay", language: "Tagalog"   } ,  
+]
+    let filteredWords = [];
+function getWord() {
+   const val = document.querySelector('input').value;
+    const updatedval = val.toLowerCase();
+    const updatedvalWord = updatedval.slice(0, 2);
+    for (let i= 0; i<words.length; i++) {
+    if (words[i].word.slice(0, 2) === updatedvalWord) {
+        filteredWords = [...filteredWords, words[i]];
+    }
+}
+txt='';
+for (let i = 0; i < filteredWords.length; i++) {
+  //JSON.stringify(filteredWords, null, "");
+const myObj = filteredWords[i];
+txt+=  'word: "' + myObj.word+ '"';
+txt+=  ' language:' + myObj.language + '<br>';
+
+
+}
+ document.getElementById("languages").innerHTML = 'Here are some similar languages to yours <br>' + txt;
+ //JSON.stringify(filteredWords, null, "");
+}
+
+</script>
   </body>
 
 </html>

@@ -102,6 +102,17 @@ img {
     top: 60%;
     transform: translateY(-40%);
   }
+  .cover_content h1 {
+  
+
+  font-size: 1.5em;
+ 
+}
+.cover_content h2 {
+
+  font-size: 0.9em;
+ 
+}
 }
 
 
@@ -158,6 +169,12 @@ img {
 }
 
 @media only screen and (max-width: 600px) {
+  .cover {
+    min-height: 700px
+  }
+  .cover_content {
+    top: 40%;
+  }
   .step:first-child {
     margin-top: -350px;
   }
@@ -370,3 +387,12 @@ figure p {
       .little-words p { font-size: .8em }
       .little-words a { color: #c8ae39}
       .step.step-4 { padding-bottom: 20em}
+      input {padding: 5px }
+      #submitname { background-color: #c8ae39; 
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: .8em;}
