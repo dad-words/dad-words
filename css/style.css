@@ -1,0 +1,371 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Playfair Display', serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  color:#364e4f;
+
+}
+
+body {
+
+  margin: 0;
+   overflow-x: hidden;
+}
+
+p {
+  font-size: 16px;
+}
+
+img {
+ 
+  border: 0;
+  height: auto;
+  padding: 0;
+  /* overflow: hidden; */
+  margin: 0 auto;
+  z-index: -99;
+  display: inline-block;
+}
+
+.section {
+
+  display: block;
+  width: 100%;
+  /* height:100vh; */
+}
+
+
+
+.cover_content h1 {
+  
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  margin-top: 0;
+  font-size: 5vw;
+  line-height: 1;
+}
+.cover_content h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  margin-top: 0;
+  font-size: 3vw;
+  line-height: 1;
+}
+.cover_content span { color: #c8ae39}
+.cover_content span.second { color: #5dcacc }
+.section_text {
+  height: 100%;
+  color: #dbdbdb;
+}
+
+
+  section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  section p {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+
+.copyright-statement {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.cover_content {
+  position: absolute;
+  width: 100%;
+  top: 20%;
+
+}
+
+@media only screen and (max-width: 1200px) {
+  .cover_content {
+    top: 55%;
+    transform: translateY(-45%);
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .cover_content {
+    top: 60%;
+    transform: translateY(-40%);
+  }
+}
+
+
+.closing_content {
+  position: relative;
+  width: 100% !important;
+  margin-top: 0;
+  top: 0%;
+  padding-left: 0%;
+  padding-right: 0%;
+  text-align: center;
+  color: black;
+  margin-bottom: 0em;
+  padding-bottom: 0%;
+}
+
+.intro-text {
+  color: black !important;
+}
+
+
+#scrolly {
+   position: relative; max-width: 90%; margin: 0 auto
+}
+
+.scroll-scenes {
+  position: relative;
+    padding: 0 1rem;
+   
+  margin-left: auto;
+  order: 2;
+}
+
+#sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  text-align: center;
+  display: block;
+  margin: auto;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  /* background-color: #8a8a8a; */
+  z-index: 0;
+  top: 50px;
+  height: calc(100vh - 50px);
+}
+
+@media only screen and (max-width: 640px) {
+  #sticky {
+    top: 40px;
+    height: calc(100vh - 40px);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .step:first-child {
+    margin-top: -350px;
+  }
+  .scroll-scenes {
+    position: relative;
+    padding: 1rem;
+   width: 100%;
+    margin: 0 auto;
+  }
+  .scroll-text {
+    font-size: 16px !important;
+  }
+
+  .intro-text {
+    font-size: 14 !important;
+    text-align: left !important;
+  }
+}
+
+figure p {
+  text-align: center;
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.step {
+  margin: 0 auto;
+  opacity: 1;
+  /* height: 75vh; */
+  padding-bottom: 75vh; text-align: center
+}
+.step img {  width: 100%; max-width: 700px; }
+
+.step:last-child {
+  margin-bottom: 10px;
+}
+
+.step.is-active {
+  opacity: 1;
+}
+
+.scroll-text {
+  padding: 1rem;
+  margin: 8rem
+}
+
+.scroll-text p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.scroll-text p:last-child {
+  margin-bottom: 0;
+}
+
+.scrollama__debug-offset {
+  display: none;
+}
+
+.imgbase {
+  opacity: 1 !important;
+}
+
+.scroll-text {
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, .95);
+  line-height: 1.5;
+  border-radius: 5px;
+  /* box-shadow: 0 0 10px rgba(0,0,0,.1); */
+}
+
+.intro-text {
+  font-size: 16px;
+  text-align: left;
+}
+
+#sticky > * {
+  position: absolute;
+  top: 50%;
+  /*left: 30%;
+  transform: translate(-50%, -50%); */
+  max-height: 100%;
+  object-fit: contain;
+ width: 100%
+}
+
+.img-step {
+  opacity: 0;
+}
+
+.is-active.transition {
+  transition: opacity 1s;
+}
+
+.img-step.is-active {
+  opacity: 1;
+}
+
+.step-subhed {
+  font-size: 21px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.center {
+  text-align: center;
+}
+.inline-block {
+  display: inline-block;
+}
+@keyframes fadeIn{
+     0% { opacity: 0; }
+  100% { opacity: 0.5; }
+    
+}
+.cover {
+  position: relative;
+  height: 0;
+  padding-bottom: 62.5%;
+  z-index: 0;
+  background-image:  linear-gradient(#dceafe 1%, white 97%);
+
+}
+.cover::before {
+   content: ' ';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 276px;
+  height: 576px;
+  z-index: -1;
+ background-image: url(../images/speech1.png);
+  background-position: left bottom;
+   background-size: 276px;
+   background-repeat: no-repeat;
+   animation: fadeIn 5s;
+    overflow: hidden;
+}
+
+.cover::after {
+   content: ' ';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 276px;
+  height: 576px;
+  z-index: -1;
+ background-image: url(../images/speech2.png);
+  background-position: right bottom;
+   background-size: 276px;
+   background-repeat: no-repeat;
+   animation: fadeIn 9s;
+    overflow: hidden;
+}
+.progress-bar {
+  position: fixed;
+  top: 0;
+  height: 4px;
+  display: block;
+  background-color: #008889;
+  z-index: 100;
+}
+
+.scroll-prompt {
+  width: 30px;
+  margin: 25px auto;
+}
+.scroll-text button {
+  padding: 10px 20px;
+    background-color: #666;
+    color: #fff;
+    border:none;
+    border-radius: 10px;
+    font-size: 2em;
+    text-transform: uppercase
+}
+.scroll-text button:hover {
+  background-color: #f11d27;
+  cursor: pointer
+}
+.is-active .fade-out-image { animation: fadeOut 3s; }
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.is-active .fade-in-image { animation: fadeIn 3s; }
+.is-active .fade-in-image2 { animation: fadeIn 5s; }
+.is-active .fade-in-image3 { animation: fadeIn 7s; }
+.is-active .fade-in-image4 { animation: fadeIn 9s; }
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+ .top-right { position: absolute; top:0; right:0 }
+  .bottom-right { position: absolute; bottom:0; right:0 }
+    .top-left { position: absolute; top:0; left:0 }
+      .bottom-left { position: absolute; bottom:0; left:0 }
+      .little-words h3 {padding-top: 10em}
+      .little-words { width: 80%; margin: 0 10%}
+      .little-words p { font-size: .8em }
+      .little-words a { color: #c8ae39}
+      .step.step-4 { padding-bottom: 20em}
